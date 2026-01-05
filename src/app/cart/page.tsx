@@ -2,6 +2,7 @@
 
 import { CartItemsType } from "@/Types";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const steps = [
   { id: 1, title: "Shipping Cart" },
@@ -69,7 +70,7 @@ const cartItems: CartItemsType = [
   },
 ];
 
-const CartPage = () => {
+const CartContent = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const activeStep = parseInt(searchParams.get("step") || "1");
@@ -97,6 +98,14 @@ const CartPage = () => {
         ))}
       </div>
     </div>
+  );
+};
+
+const CartPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CartContent />
+    </Suspense>
   );
 };
 
