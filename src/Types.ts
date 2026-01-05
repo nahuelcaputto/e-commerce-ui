@@ -7,6 +7,7 @@ export type ProductType = {
   sizes: string[];
   colors: string[];
   images: { [color: string]: string };
+  category: string;
 };
 
 export type ProductsType = ProductType[];
