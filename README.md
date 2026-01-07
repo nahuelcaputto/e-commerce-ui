@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TrendLama 🦙
 
-## Getting Started
+![TrendLama Preview](./public/screenshot.png)
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**TrendLama** is a modern, high-performance e-commerce application built to deliver a premium shopping experience. Designed with a focus on speed, accessibility, and visual aesthetics, this project showcases advanced frontend development skills using the latest React ecosystem technologies.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Check out the live demo here: [**Visite Site**](https://trendlama-flame.vercel.app/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Store Architecture**: Built on **Next.js 14** (App Router) for server-side rendering, optimal SEO, and blazing fast performance.
+- **State Management**: Utilizes **Zustand** for a lightweight, efficient, and scalable global state management solution (Shopping Cart implementation).
+- **Type Safety**: Fully typed with **TypeScript** to ensure code reliability and maintainability.
+- **Styling**: Crafted with **Tailwind CSS** for a responsive, mobile-first design that looks great on any device.
+- **Form Handling**: Robust form validation using **React Hook Form** combined with **Zod** schema validation.
+- **UI Components**: Modern, clean interface elements enhanced with **Lucide React** icons.
 
-## Learn More
+## 🛠️ Technology Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **Forms & Validation**: [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To run this project locally:
 
-## Deploy on Vercel
+1.  **Clone the repository**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    git clone https://github.com/yourusername/trendlama.git
+    cd trendlama
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2.  **Install dependencies**
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+3.  **Run the development server**
+
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+
+4.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+---
+
+_This project was built to demonstrate proficiency in modern frontend development practices._
