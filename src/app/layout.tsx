@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -32,6 +33,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </div>
+        <ToastContainer position="bottom-right" />
       </body>
     </html>
   );
