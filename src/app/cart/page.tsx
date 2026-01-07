@@ -15,12 +15,12 @@ const steps = [
   { id: 3, title: "Payment Method" },
 ];
 
-const CartPage = () => {
+const CartContent = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [shippingForm, setShippingForm] = useState<ShippingFormInputs>();
   const activeStep = parseInt(searchParams.get("step") || "1");
-  const { cart, removeFromCart, clearCart } = useCartStore();
+  const { cart, removeFromCart } = useCartStore();
 
   return (
     <div className="flex flex-col gap-8 items-center justify-center mt-12">
@@ -156,12 +156,12 @@ const CartPage = () => {
   );
 };
 
-// const CartPage = () => {
-//   return (
-//     <Suspense fallback={<div>Loading...</div>}>
-//       <CartContent />
-//     </Suspense>
-//   );
-// };
+const CartPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CartContent />
+    </Suspense>
+  );
+};
 
 export default CartPage;
