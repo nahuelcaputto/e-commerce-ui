@@ -2,6 +2,7 @@ import ProductInteraction from "@/components/ProductInteraction";
 import Image from "next/image";
 import { products } from "@/components/ProductList";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 export const generateMetadata = async ({
   params,
@@ -46,11 +47,17 @@ const ProductPage = async ({
         <h1 className="text-2xl font-medium">{product.name}</h1>
         <p className="text-gray-500">{product.description}</p>
         <h2 className="text-2xl font-semibold">${product.price.toFixed(2)}</h2>
-        <ProductInteraction
-          product={product}
-          selectedSize={selectedSize}
-          selectedColor={selectedColor}
-        />
+        <Suspense
+          fallback={
+            <div className="h-64 animate-pulse bg-gray-100 rounded-lg" />
+          }
+        >
+          <ProductInteraction
+            product={product}
+            selectedSize={selectedSize}
+            selectedColor={selectedColor}
+          />
+        </Suspense>
         {/*CARD INFO*/}
         <div className="flex items-center gap-2 mt-4">
           <Image

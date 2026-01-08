@@ -3,6 +3,7 @@ import Categories from "./Categories";
 import ProductCard from "./ProductCard";
 import Link from "next/link";
 import Filter from "./Filter";
+import { Suspense } from "react";
 
 //TEMPORARY
 export const products: ProductsType = [
@@ -136,8 +137,16 @@ const ProductList = ({
   console.log(params);
   return (
     <div className="w-full">
-      <Categories />
-      {params === "products" && <Filter />}
+      <Suspense
+        fallback={<div className="h-16 bg-gray-100 rounded-lg animate-pulse" />}
+      >
+        <Categories />
+      </Suspense>
+      {params === "products" && (
+        <Suspense fallback={<div className="h-12" />}>
+          <Filter />
+        </Suspense>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-12">
         {products
           .filter((product) =>
