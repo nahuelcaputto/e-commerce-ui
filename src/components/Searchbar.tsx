@@ -1,15 +1,39 @@
+"use client";
 import { Search } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const SearchBar = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+
+    if (name) {
+      router.push(`/products?name=${name}`);
+    } else {
+      router.push("/products");
+    }
+  };
+
   return (
-    <div className="hidden sm:flex items-center gap-2 rounded-md ring-1 ring-gray-200 p-2 py-1 shadow-md">
-      <Search className="w-4 h-4 text-gray-500" />
+    <form
+      className="hidden sm:flex items-center gap-2 rounded-md ring-1 ring-gray-200 p-2 py-1 shadow-md"
+      onSubmit={handleSearch}
+    >
       <input
-        id="search"
+        name="name"
+        type="text"
         placeholder="Search..."
-        className="text-sm outline-0"
+        defaultValue={searchParams.get("name")?.toString()}
+        className="text-sm outline-0 bg-transparent w-full"
       />
-    </div>
+      <button className="cursor-pointer">
+        <Search className="w-4 h-4 text-gray-500" />
+      </button>
+    </form>
   );
 };
 

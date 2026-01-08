@@ -5,7 +5,7 @@ import Link from "next/link";
 import Filter from "./Filter";
 
 //TEMPORARY
-const products: ProductsType = [
+export const products: ProductsType = [
   {
     id: 1,
     name: "Adidas CoreFit T-Shirt",
@@ -127,9 +127,11 @@ const products: ProductsType = [
 const ProductList = ({
   category,
   params,
+  search,
 }: {
   category: string;
   params: "homepage" | "products";
+  search?: string;
 }) => {
   console.log(params);
   return (
@@ -141,6 +143,8 @@ const ProductList = ({
           .filter((product) =>
             category && category !== "all"
               ? product.category === category
+              : search
+              ? product.name.toLowerCase().includes(search.toLowerCase())
               : product
           )
           .map((product) => (

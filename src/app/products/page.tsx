@@ -3,12 +3,12 @@ import ProductList from "../../components/ProductList";
 const ProductsPage = async ({
   searchParams,
 }: {
-  searchParams: Promise<{ category: string }>;
+  searchParams: Promise<{ category: string; name: string }>;
 }) => {
-  const category = (await searchParams).category;
+  const { category, name } = await searchParams;
   return (
     <div className="">
-      <ProductList category={category} params="products" />
+      <ProductList category={category} params="products" search={name} />
     </div>
   );
 };
